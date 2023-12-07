@@ -8,6 +8,8 @@ import ProductCard from "@/components/ProductCard";
 const Home = async () => {
   const allProducts = await getAllProducts();
 
+  console.log(allProducts);
+
   return (
     <>
       <section className="px-6 py-24 md:px-20">
