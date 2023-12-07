@@ -8,6 +8,8 @@ type ProductCardProps = {
 };
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  // console.log(product);
+
   return (
     <Link href={`/products/${product._id}`} className="product-card">
       <div className="product-card_img-container">
