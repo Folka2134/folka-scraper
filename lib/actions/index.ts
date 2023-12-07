@@ -7,6 +7,7 @@ import { getAveragePrice, getHighestPrice, getLowestPrice } from "../utils";
 import { scrapeAmazonProduct } from "./scraper";
 
 export async function ScrapeAndStoreProduct(productUrl: string) {
+
   if(!productUrl) return
 
   try {
@@ -46,5 +47,32 @@ export async function ScrapeAndStoreProduct(productUrl: string) {
   } catch (error: any) {
     throw new Error(`Faled to create/update product: ${error.message}`);
     
+  }
+}
+
+export async function getAllProducts() {
+  try {
+    connectToDB()
+
+    const products = await Product.find()
+
+    return products
+  } catch (error) {
+    console.log(error);    
+  }
+}
+
+export async function getProductById(productId: string) {
+  try {
+    connectToDB()
+
+    const product = await Product.findOne({ id: productId })
+
+    if(!product) return null
+
+    return product
+    
+  } catch (error) {
+    console.log(error);
   }
 }
