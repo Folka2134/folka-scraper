@@ -8,6 +8,7 @@ export async function ScrapeAndStoreProduct(productUrl: string) {
   try {
     const scrapedProduct = await scrapeAmazonProduct(productUrl)
     
+    if (!scrapedProduct) return
   } catch (error: any) {
     throw new Error(`Faled to create/update product: ${error.message}`);
     
