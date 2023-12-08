@@ -72,6 +72,8 @@ export const generateEmailBody = async (product: EmailProductInfo, type: Notific
     default:
       throw new Error("Invalid notification type.");
   }
+
+  return { subject, body }
 }
 
 const transporter = nodemailer.createTransport({
@@ -87,7 +89,7 @@ const transporter = nodemailer.createTransport({
 
 export const sendEmail = async (emailContent: EmailContent, sendTo: string[]) => {
   const mailOptions = {
-    from: "",
+    from: "folka2134@outlook.com",
     to: sendTo,
     html: emailContent.body,
     subject: emailContent.subject
@@ -96,8 +98,6 @@ export const sendEmail = async (emailContent: EmailContent, sendTo: string[]) =>
   transporter.sendMail(mailOptions, (error: any, info: any) => {
     if(error) return console.log(error);
 
-    console.log("Email send: ", info);
-    
-    
+    console.log("Email send: ", info);    
   })
 } 

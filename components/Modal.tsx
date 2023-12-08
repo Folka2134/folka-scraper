@@ -19,13 +19,10 @@ const Modal = ({ productId }: ModalProps) => {
     setIsSubmitting(true);
 
     await addUserEmailToProduct(productId, email);
-    try {
-      setIsSubmitting(false);
-      setEmail("");
-      closeModal();
-    } catch (error) {
-      console.log(error);
-    }
+
+    setIsSubmitting(false);
+    setEmail("");
+    closeModal();
   };
 
   const openModal = () => {
