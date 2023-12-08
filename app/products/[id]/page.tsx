@@ -96,7 +96,7 @@ const ProductDetails = async ({ params: { id } }: ProductDetailsProps) => {
                     height={16}
                   />
                   <p className="text-sm font-semibold text-primary-orange">
-                    "25"
+                    25
                   </p>
                 </div>
                 <div className="product-reviews">
