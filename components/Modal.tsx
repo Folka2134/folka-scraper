@@ -3,8 +3,13 @@
 import React, { FormEvent, Fragment, useState } from "react";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
+import { addUserEmailToProduct } from "@/lib/actions";
 
-const Modal = () => {
+type ModalProps = {
+  productId: string;
+};
+
+const Modal = ({ productId }: ModalProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [email, setEmail] = useState("");
@@ -12,6 +17,8 @@ const Modal = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    await addUserEmailToProduct(productId, email);
     try {
       setIsSubmitting(false);
       setEmail("");

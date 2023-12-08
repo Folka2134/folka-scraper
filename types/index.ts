@@ -33,12 +33,13 @@ export type NotificationType =
   | "LOWEST_PRICE"
   | "THRESHOLD_MET";
 
-export type EmailContent = {
-  subject: string;
-  body: string;
-};
 
-export type EmailProductInfo = {
-  title: string;
-  url: string;
-};
+  export type EmailContent = {
+    subject: string;
+    body: string;
+  };
+  
+  export type EmailProductInfo = {
+    title: string;
+    url: string;
+  };
