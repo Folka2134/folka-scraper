@@ -57,9 +57,7 @@ const ProductDetails = async ({ params: { id } }: ProductDetailsProps) => {
                   width={20}
                   height={20}
                 />
-                <p className="text-base font-semibold text-[#D46F77]">
-                  {product.reviewsCount || 100}
-                </p>
+                <p className="text-base font-semibold text-[#D46F77]">100</p>
               </div>
               <div className="rounded-10 bg-white-200 p-2">
                 <Image
@@ -98,7 +96,7 @@ const ProductDetails = async ({ params: { id } }: ProductDetailsProps) => {
                     height={16}
                   />
                   <p className="text-sm font-semibold text-primary-orange">
-                    {product.stars || "25"}
+                    "25"
                   </p>
                 </div>
                 <div className="product-reviews">
@@ -109,7 +107,7 @@ const ProductDetails = async ({ params: { id } }: ProductDetailsProps) => {
                     height={16}
                   />
                   <p className="text-sm font-semibold text-secondary">
-                    {product.reviewsCount || "100"} Reviews
+                    100 Reviews
                   </p>
                 </div>
               </div>
